@@ -67,6 +67,9 @@ Payloads to test redirection based on user-controlled input:
 <script>document.getElementById('redirect').click();</script>
 ```
 ```
+<h1><font Color=red>Visit Our New WebSite</h1><h3><mark><a href='https://xss.js.org/#/xss02'>https://www.google.com/</a></mark></h3><a href='https://evil.com' target='_blank'>
+```
+```
 https://target.com/redirect?url=https://example.com
 ```
 ```
