@@ -1,13 +1,5 @@
 # HTML-iFrame
 Collection of HTML Injection, iFrame Injection, and Open Redirect payloads for educational and authorized security testing.
-
-# HTML, iFrame & Open Redirect Payloads
-
-> ⚠️ **Disclaimer**  
-> This repository is intended strictly for **educational and authorized security testing purposes**.  
-> Use these payloads only on applications you own or have explicit permission to test.  
-> The author is not responsible for misuse.
-
 ---
 
 ## 📌 Overview
